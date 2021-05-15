@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import {connect} from 'react-redux';
+
 
 
 import Profile from './components/Profile';
@@ -18,7 +18,4 @@ function App(props) {
   );
 }
 
-
-export default connect(
-  state => ({isLoggedIn: state.auth.isLoggedIn})
-)(App);
+export default App;
