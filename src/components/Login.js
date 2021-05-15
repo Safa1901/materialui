@@ -2,7 +2,6 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Avatar from '@material-ui/core/Avatar';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -40,8 +39,8 @@ export default function Login({onSigninSubmit, email, onEmailChange, password, o
         <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-                <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon fontSize="medium"/>
+                <Avatar className={classes.avatar} src="">
+
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Войти в профиль
@@ -57,6 +56,7 @@ export default function Login({onSigninSubmit, email, onEmailChange, password, o
                         name="email"
                         autoComplete="email"
                         autoFocus
+                        value={email}
                         onChange={onEmailChange}
                     />
                     
@@ -70,6 +70,7 @@ export default function Login({onSigninSubmit, email, onEmailChange, password, o
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        value={password}
                         onChange={onPasswordChahge}
                     />
                     <FormControlLabel

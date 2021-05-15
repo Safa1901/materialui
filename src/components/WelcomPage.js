@@ -1,6 +1,9 @@
 import React from 'react';
+import {createBrowserHistory} from 'history'
 
 import Login from './Login';
+
+export const history = createBrowserHistory();
 
 class WelcomePage extends React.Component {
     state ={
@@ -20,7 +23,9 @@ class WelcomePage extends React.Component {
     onSigninSubmit = (e) =>{
       e.preventDefault();
       console.log('email: ' + this.state.email + ', password: ' + this.state.password);
+      this.props.history.push("/profile")
     }
+
     render() {
       return(
         <Login 

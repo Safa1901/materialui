@@ -1,18 +1,24 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-import WelcomePage from './components/WelcomPage';
 
-function App() {
+import Profile from './components/Profile';
+import Login from './components/Login';
+
+function App(props) {
   return (
     <Router>
       <Switch>
-        <Route exact path='/(welcome)?' component={WelcomePage} />
-
-        <Redirect to='/' />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/profile' component={Profile} />
+        <Redirect to='/' component={Login} />
       </Switch>
     </Router>
   );
 }
 
-export default App;
+
+export default connect(
+  state => ({isLoggedIn: state.auth.isLoggedIn})
+)(App);
