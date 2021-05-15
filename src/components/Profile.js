@@ -25,25 +25,22 @@ const useStyles = makeStyles({
 
 export default function Profile(props) {
   const classes = useStyles();
-  const { post } = props;
 
   return (
     <Container component="main" maxWidth="xs">
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={12}>
         <CardActionArea component="a" href="#">
           <Card className={classes.card}>
             <div className={classes.cardDetails}>
               <CardContent>
                 <Typography component="h2" variant="h5">
-                  {post.title}
                 </Typography>
                 <Typography variant="subtitle1" paragraph>
-                  {post.description}
                 </Typography>
               </CardContent>
             </div>
             <Hidden xsDown>
-              <CardMedia className={classes.cardMedia} title={post.imageTitle} />
+              <CardMedia className={classes.cardMedia} />
             </Hidden>
           </Card>
         </CardActionArea>

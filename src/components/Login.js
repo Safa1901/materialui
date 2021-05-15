@@ -7,9 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+
 
 
 
@@ -83,13 +84,14 @@ export default function Login({onSigninSubmit, email, onEmailChange, password, o
                         fullWidth
                         variant="contained"
                         color="secondary"
+                        href="/profile"
                     >
                         Войти
                     </Button>
-                                <Grid container>
+                    <Grid container>
                         <Grid item>
-                            <Link href="#" variant="body2">
-                                {"Нет учетной записи? Зарегистрируйся"}
+                            <Link to='/register'>
+                                <p>"Нет учетной записи? Зарегистрируйся"</p>
                             </Link>
                         </Grid>
                     </Grid>
