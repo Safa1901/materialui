@@ -1,12 +1,10 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-
-
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 
 import Profile from './components/Profile';
 import Login from './components/Login';
 
-function App(props) {
+function App() {
   return (
     <Router>
       <Switch>
