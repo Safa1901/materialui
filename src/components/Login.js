@@ -8,8 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { Link } from "react-router-dom";
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 
 
@@ -41,7 +42,7 @@ export default function Login({onSigninSubmit, email, onEmailChange, password, o
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar} src="">
-
+                    <LockOutlinedIcon fontSize="medium"/>
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Войти в профиль
@@ -88,13 +89,9 @@ export default function Login({onSigninSubmit, email, onEmailChange, password, o
                     >
                         Войти
                     </Button>
-                    <Grid container>
-                        <Grid item>
-                            <Link to='/register'>
-                                <p>"Нет учетной записи? Зарегистрируйся"</p>
-                            </Link>
-                        </Grid>
-                    </Grid>
+                    <Link to="/register">
+                        <p>"Нет учетной записи? Зарегистрируйся"</p>
+                    </Link>
                 </form>
             </div>
         </Container>

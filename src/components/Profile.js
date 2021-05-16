@@ -1,54 +1,55 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Hidden from '@material-ui/core/Hidden';
+import Avatar from '@material-ui/core/Avatar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
 
 
 const useStyles = makeStyles({
+  section: {
+    marginTop: '15%'
+  },
+
   card: {
     display: 'flex',
   },
-  cardDetails: {
-    flex: 1,
+
+  avatar: {
+    marginLeft: 15,
+    marginTop:25
   },
-  cardMedia: {
-    width: 160,
-  },
+
+  paper: {
+    width: 350,
+    height: 200,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }
+
 });
 
-export default function Profile(props) {
+export default function Profile() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" className={classes.section}>
       <Grid item xs={12} md={12}>
-        <CardActionArea component="a" href="#">
-          <Card className={classes.card}>
-            <div className={classes.cardDetails}>
-              <CardContent>
-                <Typography component="h2" variant="h5">
-                </Typography>
-                <Typography variant="subtitle1" paragraph>
-                </Typography>
-              </CardContent>
+        <Card className={classes.card}>
+          <Avatar variant="circle" className={classes.avatar}></Avatar>
+          <CardContent component="div">
+            <CssBaseline />
+            <div className={classes.paper}>
+              <Typography component="h1" variant="h5">Имя пользователя</Typography>
+              <Typography component="h2">Информация о пользователе</Typography>
             </div>
-            <Hidden xsDown>
-              <CardMedia className={classes.cardMedia} />
-            </Hidden>
-          </Card>
-        </CardActionArea>
+          </CardContent>
+        </Card>
       </Grid>
     </Container>
   );
 }
-
-Profile.propTypes = {
-  post: PropTypes.object,
-};

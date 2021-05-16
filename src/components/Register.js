@@ -8,9 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 
 
@@ -62,8 +61,8 @@ export default function Login() {
                         required
                         fullWidth
                         id="lastName"
-                        label="Last Name"
-                        name="Имя"
+                        label="Имя "
+                        name="name"
                         autoComplete="lname"
                     />
                     <TextField 
@@ -102,13 +101,9 @@ export default function Login() {
                     >
                         Зарегистрироваться
                     </Button>
-                                <Grid container>
-                        <Grid item>
-                            <Link href="#" variant="body2">
-                                {"Есть учетная запись? Войти"}
-                            </Link>
-                        </Grid>
-                    </Grid>
+                    <Link to="/login">
+                        <p>"Есть учетная запись? Войти"</p>
+                    </Link>
                 </form>
             </div>
         </Container>
