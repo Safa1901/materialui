@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-    switch(action.type) {
+    switch (action.type) {
         case LOG_IN: {
             return {isLoggedIn: true}
         }
@@ -13,6 +13,6 @@ export default function(state = initialState, action) {
             return {isLoggedIn: false}
         }
         default:
-            return state
+            return state;
     }
 };
