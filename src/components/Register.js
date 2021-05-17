@@ -46,25 +46,6 @@ export default function Login() {
                     Регистрация
                 </Typography>
                 <form className={classes.form} noValidate>
-                    <TextField
-                        autoComplete="fname"
-                        name="firstName"
-                        variant="outlined"
-                        required
-                        fullWidth
-                        id="firstName"
-                        label="Фамилия"
-                        autoFocus
-                    />
-                    <TextField
-                        variant="outlined"
-                        required
-                        fullWidth
-                        id="lastName"
-                        label="Имя "
-                        name="name"
-                        autoComplete="lname"
-                    />
                     <TextField 
                         variant="outlined"
                         margin="normal"

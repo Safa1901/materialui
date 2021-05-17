@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function Login({onSigninSubmit, email, onEmailChange, password, onPasswordChahge}) {
+export default function Login({authenticate, email, onEmailChange, password, onPasswordChahge}) {
     const classes = useStyles();
 
     return (
@@ -42,12 +42,12 @@ export default function Login({onSigninSubmit, email, onEmailChange, password, o
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar} src="">
-                    <LockOutlinedIcon fontSize="medium"/>
+                <LockOutlinedIcon fontSize="medium"/>
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Войти в профиль
                 </Typography>
-                <form className={classes.form} onSubmit={onSigninSubmit} noValidate>
+                <form className={classes.form} onSubmit={authenticate} noValidate>
                     <TextField 
                         variant="outlined"
                         margin="normal"
