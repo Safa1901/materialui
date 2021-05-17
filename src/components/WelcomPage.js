@@ -2,7 +2,7 @@ import React from 'react';
 import {createBrowserHistory} from 'history';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {logIn} from '../actions';
+import {authenticate} from '../actions';
 
 import Login from './Login';
 
@@ -26,7 +26,7 @@ class WelcomePage extends React.Component {
   authenticate = (event) => {
     event.preventDefault();
     const { email, password } = event.target;
-    this.props.logIn(email.value, password.value);
+    this.props.authenticate(email.value, password.value);
   };
 
   goToProfile = (event) => {
@@ -56,5 +56,5 @@ WelcomePage.propTypes = {
   
 export const WelcomePageWithAuth = connect(
   (state) => ({isLoggedIn: state.auth.isLoggedIn}),
-  { logIn }
+  { authenticate }
 )(WelcomePage);
