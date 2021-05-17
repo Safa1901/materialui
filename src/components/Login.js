@@ -42,7 +42,7 @@ export default function Login({authenticate, email, onEmailChange, password, onP
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar} src="">
-                <LockOutlinedIcon fontSize="defualt"/>
+                <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Войти в профиль
