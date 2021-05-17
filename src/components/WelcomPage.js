@@ -9,20 +9,20 @@ import Login from './Login';
 export const history = createBrowserHistory();
 
 class WelcomePage extends React.Component {
-  // state = {
-  //   email: '',
-  //   password: ''
-  // }
-  // onEmailChange = (e) => {
-  //   this.setState({
-  //       email: e.target.value
-  //   })
-  // }  
-  // onPasswordChahge = (e) => {
-  //   this.setState({
-  //     password: e.target.value
-  //   })
-  // }
+  state = {
+    email: '',
+    password: ''
+  }
+  onEmailChange = (e) => {
+    this.setState({
+        email: e.target.value
+    })
+  }  
+  onPasswordChahge = (e) => {
+    this.setState({
+      password: e.target.value
+    })
+  }
   authenticate = (event) => {
     event.preventDefault();
     const { email, password } = event.target;
@@ -37,7 +37,6 @@ class WelcomePage extends React.Component {
   render() {
     return(
       <Login 
-        submit={this.goToProfile}
         authenticate={this.authenticate} 
         onEmailChange={this.onEmailChange}
         email={this.state.email}

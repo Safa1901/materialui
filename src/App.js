@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
-import {
-  Route, 
-  Redirect, 
-  Switch,
-} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import Profile from './components/Profile';
-import Login from './components/Login';
 import Register from './components/Register'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { WelcomePageWithAuth } from './components/WelcomPage';
+import {createBrowserHistory} from 'history';
 
 class App extends Component {
   render(){
-    const { history } = this.props
+    const { history } = createBrowserHistory();
+
+    if (this.props.isLoggedIn) {
+      return (
+        <Switch>
+          <Route history={history} exact path='/' component={WelcomePageWithAuth} />
+          <Route history={history} path='/profile' component={Profile} />
+          <Route history={history} path='/register' component={Register} />
+        </Switch>
+      );
+    }
     return (
       <Switch>
-        <Route history={history} exact path='/' component={Login} />
+        <Route history={history} exact path='/' component={WelcomePageWithAuth} />
         <Route history={history} path='/profile' component={Profile} />
         <Route history={history} path='/register' component={Register} />
-        <Redirect to='/' component={Login} />
       </Switch>
-
     );
+    
   }
 }
 
