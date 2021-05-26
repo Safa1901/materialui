@@ -31,7 +31,7 @@ class WelcomePage extends React.Component {
 
   goToProfile = (event) => {
     event.preventDefault();
-    this.props.navigate("profile");
+    this.props.history.push("profile");
   };
 
   render() {

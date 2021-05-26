@@ -6,7 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography'
 
 
 
@@ -37,11 +37,14 @@ const useStyles = makeStyles({
 export default function Profile() {
   const classes = useStyles();
 
+
   return (
     <Container component="main" maxWidth="xs" className={classes.section}>
       <Grid item xs={12} md={12}>
         <Card className={classes.card}>
-          <Avatar variant="circle" className={classes.avatar}></Avatar>
+          <Avatar variant="circle" className={classes.avatar}>
+            <img src={localStorage.getItem("avatar")} />
+          </Avatar>
           <CardContent component="div">
             <CssBaseline />
             <div className={classes.paper}>

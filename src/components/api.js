@@ -6,7 +6,8 @@ export const serverLogIn = async (email, password) => {
         },
         body: JSON.stringify({
             username: email,
-            password: password
+            password: password,
+            avatar: value,
         })
     });
 
@@ -16,4 +17,3 @@ export const serverLogIn = async (email, password) => {
 
     return response.json();
 };
-
